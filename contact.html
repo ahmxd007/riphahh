@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/shoelace-autoloader.js"></script>
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+
+</head>
+<body>
+    <div class="main4">
+        <header>
+            <a href="index.html"><i class="ri-arrow-left-line"></i></a>
+            <h1>Riphah Tuition Academy</h1>
+            <a href="index.html"><i class="ri-home-7-line"></i></a>
+        </header>
+
+        <h1 class="CONTACT">Contact Us</h1>
+
+        <div class="section1">
+          <div class="Contact">
+            <div class="left">
+                <form id="contact-form-2">
+                    <label for="user_name">Name</label>
+                    <input type="text" name="user_name" id="user_name" placeholder="Your name..." required>
+                    <label for="user_email">Email</label>
+                    <input type="email" name="user_email" id="user_email" placeholder="example@gmail.com" required>
+                    <label for="message">Message</label>
+                    <textarea name="Message" id="Message" placeholder="Your message" required></textarea>
+                    <button type="submit" id="submit-btn" class="sumbit-btn">Send</button>
+                </form>
+            </div>
+            <div class="right">
+                <div class="uper">
+                    <h3><i class="ri-map-pin-line"></i> Old HBL building pindi road kallar syedan</h3>
+                    <h3><i class="ri-phone-line"></i> 0300-00000000</h3>
+                    <h3><i class="ri-mail-line"></i> riphahacademy@gmail.com</h3>
+                </div>
+                <div class="niche">
+                    <a href=""><i class="ri-facebook-fill"></i></a>
+                    <a href=""><i class="ri-whatsapp-fill"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          
+        </footer>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    
+    <script>
+   function emailSending2(){
+  
+  document.getElementById('contact-form-2').addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log(`hello`);
+    sumbitbtn.innerText = "Just a Moment"
+    emailjs.init({
+      publicKey: '_VBmZlzHU59GA5Owk',
+    });
+    emailjs.sendForm('service_3px47sw', 'template_qs58k14', this)
+    .then(()=>{
+      sumbitbtn.innerText = "Message Sent"
+      messageInput.value = "";
+      nameInput.value = "";
+      emailInput.value = "";
+    })
+});
+}
+
+emailSending2();
+    </script>
+</body>
+</html>
